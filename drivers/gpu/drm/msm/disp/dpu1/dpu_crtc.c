@@ -1420,9 +1420,9 @@ static struct msm_display_topology dpu_crtc_get_topology(
 		if (topology.num_lm <= (int)dpu_kms->catalog->dspp_count) {
 			topology.num_dspp = topology.num_lm;
 		} else {
-			DRM_WARN("CTM/gamma on %d LM(s) with %d DSPP(s), "
-				  "color management skipped\n",
-				  topology.num_lm, dpu_kms->catalog->dspp_count);
+			DRM_WARN_ONCE("CTM/gamma on %d LM(s) with %d DSPP(s), "
+				       "color management skipped\n",
+				       topology.num_lm, dpu_kms->catalog->dspp_count);
 		}
 	}
 
